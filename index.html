@@ -184,6 +184,120 @@
             100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
+        /* Hero CTAs */
+        .hero-cta {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0 10px;
+        }
+        .btn-hire-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--accent);
+            color: var(--accent) !important;
+            background: transparent;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-hire-ghost:hover {
+            background-color: var(--accent);
+            color: #0f172a !important;
+        }
+
+        /* Nav "Work With Me" button */
+        .btn-hire {
+            background-color: #22c55e;
+            color: #0f172a !important;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .btn-hire:hover { background-color: #16a34a; }
+
+        /* Metric callout on project cards */
+        .metric-hero {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 10px 0 4px;
+            letter-spacing: -0.5px;
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        /* Services tier cards */
+        .service-tier .project-title {
+            font-size: 1.4rem;
+            color: var(--accent);
+        }
+        .service-tier ul {
+            padding-left: 20px;
+            color: var(--text-secondary);
+            margin: 12px 0;
+        }
+        .service-tier ul li { margin: 6px 0; font-size: 0.95rem; }
+        .service-tier .duration {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        /* Contact section */
+        .contact-box {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 50px 30px;
+            text-align: center;
+            margin: 20px auto 60px;
+            max-width: 720px;
+        }
+        .contact-box h3 {
+            font-size: 1.75rem;
+            margin: 0 0 10px;
+        }
+        .contact-box p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+        }
+        .contact-box .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent);
+            color: #0f172a !important;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .contact-box .btn-email:hover { background-color: var(--accent-hover); }
+        .response-note {
+            margin-top: 18px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .response-note i { color: #22c55e; margin-right: 4px; }
+
         footer {
             text-align: center;
             padding: 40px;
@@ -199,17 +313,24 @@
     <div class="logo">Somnath.AI</div>
     <div class="nav-links">
         <a href="#featured">Work</a>
-        <a href="#demos">Live Demos</a>
-        <a href="#opensource">Open Source</a>
-        <a href="resume.pdf" class="btn-resume" download><i class="fas fa-download"></i> Download Resume</a>
+        <a href="#demos">Demos</a>
+        <a href="#publications">Publications</a>
+        <a href="#services">Services</a>
+        <a href="resume.pdf" class="btn-resume" download><i class="fas fa-download"></i> Resume</a>
+        <a href="#contact" class="btn-hire"><i class="fas fa-envelope"></i> Work With Me</a>
     </div>
 </nav>
 
 <section class="hero">
-    <h1>Turning Unstructured Data into <span style="color: var(--accent);">Agentic Intelligence</span></h1>
-    <p>AI Developer specializing in Vision-Language Models, Agentic Workflows, and Production ML Pipelines.</p>
-    <div class="tech-stack" style="justify-content: center;">
+    <h1>I turn product catalogs and industrial images into <span style="color: var(--accent);">structured data</span> with AI</h1>
+    <p>Vision-language systems, agentic pipelines, and production-ready ML — shipped end-to-end. Try two of my apps in your browser below.</p>
+    <div class="hero-cta">
+        <a href="#demos" class="btn-launch"><i class="fas fa-rocket"></i> Try Live Demos</a>
+        <a href="#contact" class="btn-hire-ghost"><i class="fas fa-envelope"></i> Work With Me</a>
+    </div>
+    <div class="tech-stack" style="justify-content: center; margin-top: 20px;">
         <span class="tech-tag">Claude Sonnet 4.5</span>
+        <span class="tech-tag">Gemma 3</span>
         <span class="tech-tag">CrewAI</span>
         <span class="tech-tag">YOLOv8</span>
         <span class="tech-tag">FastAPI</span>
@@ -229,8 +350,10 @@
                 </div>
                 <i class="fas fa-brain" style="color: var(--accent); font-size: 1.5rem;"></i>
             </div>
+            <div class="metric-hero">100%</div>
+            <div class="metric-label">Automated tagging</div>
             <p class="project-desc">
-                Architected a proprietary system that transforms unstructured images and PDFs into structured data. 
+                Architected a proprietary system that transforms unstructured images and PDFs into structured data.
                 Replaced manual tagging with automated analysis using autonomous agents.
             </p>
             <div class="tech-stack">
@@ -249,9 +372,11 @@
                 </div>
                 <i class="fas fa-tshirt" style="color: var(--accent); font-size: 1.5rem;"></i>
             </div>
+            <div class="metric-hero">+28%</div>
+            <div class="metric-label">Accuracy · −70% onboarding time</div>
             <p class="project-desc">
-                Boosted classification accuracy from 60% to 88% by implementing Vision-Language Models (VLMs). 
-                Reduced product onboarding time by 70% for 15k+ monthly products.
+                Boosted classification accuracy from 60% to 88% by implementing Vision-Language Models (VLMs).
+                Reduced product onboarding time by 70% across 15k+ monthly products.
             </p>
             <div class="tech-stack">
                 <span class="tech-tag">VLMs</span>
@@ -269,8 +394,10 @@
                 </div>
                 <i class="fas fa-industry" style="color: var(--accent); font-size: 1.5rem;"></i>
             </div>
+            <div class="metric-hero">99.2%</div>
+            <div class="metric-label">Detection accuracy on P&ID diagrams</div>
             <p class="project-desc">
-                Led a team to achieve 99.2% accuracy in analyzing engineering diagrams using YOLOv7 and SAHI. 
+                Led a team to achieve 99.2% accuracy in analyzing engineering diagrams using YOLOv7 and SAHI.
                 Architected complex object-text association pipelines with JSON outputs.
             </p>
             <div class="tech-stack">
@@ -351,6 +478,70 @@
 
     </div>
 
+    <h2 class="section-title" id="publications">Publications</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-top: -15px; margin-bottom: 30px;">
+        Peer-reviewed research on biosignal processing and human-computer interaction.
+    </p>
+    <div class="project-grid">
+
+        <!-- Publication 1: Blink from EEG -->
+        <div class="project-card">
+            <div class="project-header">
+                <div>
+                    <div class="project-type">Biosignal · Conference Paper</div>
+                    <h3 class="project-title">A Method to Detect Blink from EEG Signal</h3>
+                </div>
+                <i class="fas fa-book" style="color: var(--accent); font-size: 1.5rem;"></i>
+            </div>
+            <p class="project-desc">
+                Proposed a technique for detecting eye blinks from raw EEG signals — useful for BCI systems,
+                fatigue monitoring, and assistive interfaces.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-tag">EEG</span>
+                <span class="tech-tag">Signal Processing</span>
+                <span class="tech-tag">BCI</span>
+            </div>
+            <div class="card-links">
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <i class="fas fa-calendar-alt"></i> ICICC 2019
+                </span>
+                <a href="https://doi.org/10.1007/978-981-15-1084-7_24" target="_blank" style="margin-left: 14px;">
+                    <i class="fas fa-external-link-alt"></i> DOI / Paper
+                </a>
+            </div>
+        </div>
+
+        <!-- Publication 2: Saccade/Fixation from EOG -->
+        <div class="project-card">
+            <div class="project-header">
+                <div>
+                    <div class="project-type">Biosignal · IEEE Conference Paper</div>
+                    <h3 class="project-title">Saccade and Fixation Detection from EOG</h3>
+                </div>
+                <i class="fas fa-eye" style="color: var(--accent); font-size: 1.5rem;"></i>
+            </div>
+            <p class="project-desc">
+                Algorithm for classifying saccade and fixation eye-movement events from electrooculography (EOG)
+                — foundational work for gaze-based interfaces and vision-science applications.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-tag">EOG</span>
+                <span class="tech-tag">Eye Tracking</span>
+                <span class="tech-tag">Event Detection</span>
+            </div>
+            <div class="card-links">
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <i class="fas fa-calendar-alt"></i> IEEE iSES 2019
+                </span>
+                <a href="https://doi.org/10.1109/iSES47678.2019.00099" target="_blank" style="margin-left: 14px;">
+                    <i class="fas fa-external-link-alt"></i> DOI / Paper
+                </a>
+            </div>
+        </div>
+
+    </div>
+
     <h2 class="section-title" id="opensource">Open Source & Research</h2>
     <div class="project-grid">
         
@@ -407,6 +598,97 @@
             </div>
         </div>
 
+    </div>
+
+    <h2 class="section-title" id="services">Services</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-top: -15px; margin-bottom: 30px;">
+        Three ways to work together, from quick validation to long-term engagement.
+    </p>
+    <div class="project-grid">
+
+        <!-- Service Tier 1: Discovery Sprint -->
+        <div class="project-card service-tier">
+            <div class="project-header">
+                <div>
+                    <span class="duration">1–2 weeks</span>
+                    <h3 class="project-title">Discovery Sprint</h3>
+                </div>
+                <i class="fas fa-compass" style="color: var(--accent); font-size: 1.8rem;"></i>
+            </div>
+            <p class="project-desc">
+                Fast, fixed-scope validation for teams exploring AI for their problem. Walk away with a clear answer on feasibility and a roadmap for what to build next.
+            </p>
+            <ul>
+                <li>Problem scoping + technical feasibility review</li>
+                <li>Rapid prototype or proof-of-concept</li>
+                <li>Production roadmap with effort estimates</li>
+                <li>Final presentation to your team</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">Best for: exploring</span>
+            </div>
+        </div>
+
+        <!-- Service Tier 2: Production Build -->
+        <div class="project-card service-tier">
+            <div class="project-header">
+                <div>
+                    <span class="duration">6–12 weeks</span>
+                    <h3 class="project-title">Production Build</h3>
+                </div>
+                <i class="fas fa-hammer" style="color: var(--accent); font-size: 1.8rem;"></i>
+            </div>
+            <p class="project-desc">
+                End-to-end build of an AI feature or internal tool, from data pipeline through deployed UI. Shipped, documented, handed off ready for your team to operate.
+            </p>
+            <ul>
+                <li>ML / vision-language pipeline development</li>
+                <li>FastAPI backend + Streamlit or custom UI</li>
+                <li>Cloud deployment (AWS / GCP / Streamlit Cloud)</li>
+                <li>Documentation, tests, and team walkthrough</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">Best for: shipping</span>
+            </div>
+        </div>
+
+        <!-- Service Tier 3: Fractional AI Lead -->
+        <div class="project-card service-tier">
+            <div class="project-header">
+                <div>
+                    <span class="duration">Ongoing · 1–2 days/week</span>
+                    <h3 class="project-title">Fractional AI Lead</h3>
+                </div>
+                <i class="fas fa-user-tie" style="color: var(--accent); font-size: 1.8rem;"></i>
+            </div>
+            <p class="project-desc">
+                Embedded technical leadership for teams without a full-time AI lead. Architect, unblock, review, and grow your in-house capability over time.
+            </p>
+            <ul>
+                <li>Architecture and model selection decisions</li>
+                <li>Code reviews and mentorship for your engineers</li>
+                <li>Hiring support (interviews, take-home design)</li>
+                <li>Roadmap ownership and quarterly planning</li>
+            </ul>
+            <div class="tech-stack">
+                <span class="tech-tag">Best for: scaling</span>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="section-title" id="contact">Work With Me</h2>
+    <div class="contact-box">
+        <h3>Have a computer-vision or agentic-AI problem?</h3>
+        <p>
+            I take on a small number of engagements each quarter. Tell me what you're working on — I'll reply within 24 hours on weekdays.
+        </p>
+        <a href="mailto:somroymail@gmail.com?subject=Project%20Inquiry%20from%20somroy1993.github.io" class="btn-email">
+            <i class="fas fa-envelope"></i> somroymail@gmail.com
+        </a>
+        <div class="response-note">
+            <i class="fas fa-circle-check"></i> Available for Discovery Sprints · Production Builds · Fractional AI Lead
+        </div>
     </div>
 </div>
 
